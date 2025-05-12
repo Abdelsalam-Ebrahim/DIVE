@@ -216,6 +216,11 @@
     background: linear-gradient(270.09deg, #15181B 0.09%, rgba(21, 24, 27, 0) 99.93%);
     align-items: flex-end;
 }
+@media (max-width: 991.98px) {
+    .header-carousel .owl-carousel-text {
+        padding: 1rem;
+    }
+}
 .header-carousel .owl-carousel-text h1 {
     line-height: 1.4;
 }
@@ -349,7 +354,13 @@
 }
 
 .service-item:hover .btn {
-    width: 140px;
+    width: 150px;
+}
+
+@media (max-width: 991.98px) {
+    .service-item .btn {
+        width: 150px;
+    }
 }
 
 
