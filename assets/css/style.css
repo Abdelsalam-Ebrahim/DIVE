@@ -218,7 +218,7 @@
 }
 @media (max-width: 991.98px) {
     .header-carousel .owl-carousel-text {
-        padding: 1rem;
+        padding: 4px
     }
 }
 .header-carousel .owl-carousel-text h1 {
