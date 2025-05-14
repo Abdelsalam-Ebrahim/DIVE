@@ -18,19 +18,12 @@
 
     // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
+        if ($(this).scrollTop() > 70) {
             $('.sticky-top').addClass('shadow-lg').css('top', '0px');
         } else {
             $('.sticky-top').removeClass('shadow-lg').css('top', '-100px');
         }
     });
-
-
-    // Facts counter
-    // $('[data-toggle="counter-up"]').counterUp({
-    //     delay: 10,
-    //     time: 2000
-    // });
 
 
     // Date and time picker
@@ -121,4 +114,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.5 });
   
     observer.observe(funFactsSection);
-  });
+});

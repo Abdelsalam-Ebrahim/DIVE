@@ -210,10 +210,10 @@
     flex-direction: column;
     align-items: flex-start;
     text-shadow: 0 0 30px rgba(0, 0, 0, .1);
-    background: linear-gradient(90.09deg, #15181B 0.09%, rgba(21, 24, 27, 0) 99.93%);
+    background: linear-gradient(90.09deg, #15181B 0.09%, rgba(21, 24, 27, 0) 40%);
 }
 [dir="rtl"] .header-carousel .owl-carousel-text {
-    background: linear-gradient(270.09deg, #15181B 0.09%, rgba(21, 24, 27, 0) 99.93%);
+    background: linear-gradient(270.09deg, #15181B 0.09%, rgba(21, 24, 27, 0) 40%);
     align-items: flex-end;
 }
 @media (max-width: 991.98px) {
@@ -310,21 +310,22 @@
     text-shadow: 0 0 30px rgba(0, 0, 0, .1);
 }
 
-.about-us.page-header {
-    background: url(../img/banners/about-us.jpg) top center no-repeat;
-}
+/* .about-us.page-header {
+    background: url(../img/banners/our-services.jpg) top center no-repeat;
+} */
 
 .our-services.page-header {
-    background: url(../img/banners/our-services.jpg) top center no-repeat;
+    background: url(../img/banners/our-partners.jpg) top center no-repeat;
 }
 
 .our-partners.page-header {
     background: url(../img/banners/our-partners.jpg) top center no-repeat;
 }
 
-.contact-us.page-header {
-    background: url(../img/banners/contact-us.jpg) top center no-repeat;
-}
+/* .contact-us.page-header {
+    background: url(../img/banners/19.jpg) top center no-repeat;
+    position: relative;
+} */
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
@@ -954,4 +955,29 @@
 }
 
 
-/* background: linear-gradient(90.09deg, #15181B 0.09%, rgba(21, 24, 27, 0) 99.93%); */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 100;
+
+  img {
+    width: 54px;
+    height: 54px;
+  }
+}
+@media (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .whatsapp-icon {
+    bottom: 20px;
+  }
+}
+
+/* English Font */
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Arabic Font */
+[dir="rtl"] body {
+    font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+}
