@@ -78,14 +78,17 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  const pathname = window.location.pathname;
+
+  if (pathname === "/en/about.html" || pathname === "/ar/about.html" || pathname === "/en/" || pathname === "/ar/") {
     const counters = document.querySelectorAll(".counter");
     const funFactsSection = document.querySelector(".fun-facts");
     let hasStarted = false;
-  
-    function animateCount(el, target, duration = 5000) {
+
+    function animateCount(el, target, duration = 3000) {
       let current = 0;
-      const increment = target / (duration / 16); // ~30fps (every 33ms)
-  
+      const increment = target / (duration / 16); // ~60fps
+
       const update = () => {
         current += increment;
         if (current < target) {
@@ -95,23 +98,26 @@ document.addEventListener("DOMContentLoaded", function () {
           el.innerText = target.toFixed(target % 1 !== 0 ? 1 : 0);
         }
       };
-  
+
       requestAnimationFrame(update);
     }
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasStarted) {
-          hasStarted = true;
-          counters.forEach(counter => {
-            const target = parseFloat(counter.getAttribute("data-target"));
-            if (!isNaN(target)) {
-              animateCount(counter, target);
-            }
-          });
-        }
-      });
-    }, { threshold: 0.5 });
-  
-    observer.observe(funFactsSection);
+
+    if (funFactsSection) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasStarted) {
+            hasStarted = true;
+            counters.forEach(counter => {
+              const target = parseFloat(counter.getAttribute("data-target"));
+              if (!isNaN(target)) {
+                animateCount(counter, target);
+              }
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(funFactsSection);
+    }
+  }
 });
